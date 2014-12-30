@@ -1,4 +1,1 @@
 ---
-
-- name: install lattice
-  yum: name=lattice state=present

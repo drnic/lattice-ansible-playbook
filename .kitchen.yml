@@ -8,9 +8,13 @@ provisioner:
   hosts: test-kitchen
   ansible_verbose: true
   sudo: true
+  roles_path: roles
 
 platforms:
-  - name: centos-6.6
+- name: ubuntu-trusty64
+  driver_plugin: vagrant
+  driver_config:
+    box: lattice/ubuntu-trusty-64
 
 suites:
  - name: default

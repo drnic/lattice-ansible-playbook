@@ -6,4 +6,4 @@
   user: root
 
   roles:
-    - lattice
+    - joshualund.golang

@@ -41,4 +41,4 @@ License
 Author Information
 ------------------
 
-Author:: [lattice](https://github.com/drnic) \<[drnicwilliams@gmail.com](drnicwilliams@gmail.com)\>
+Author:: [Dr Nic Williams](https://github.com/drnic) \<[drnicwilliams@gmail.com](drnicwilliams@gmail.com)\>

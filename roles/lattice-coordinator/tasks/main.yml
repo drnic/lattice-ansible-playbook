@@ -3,6 +3,8 @@
 #   copy: src={{ lattice_tarball }} dest=/usr/local/
 #   ignore_errors: yes
 
+- apt: name=curl
+
 - name: Download lattice release tarball
   get_url: url={{ lattice_tarball_url }} dest=/usr/local/{{ lattice_tarball }} force=no
 
@@ -13,8 +15,25 @@
   shell: tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
   when: lattice_build.stat.isdir is not defined or not lattice_build.stat.isdir
 
-- name: Install coordinator binaries
-  copy: src=/usr/local/lattice-build/coordinator/bin/ dest=/usr/local/bin/
+# - name: Install coordinator binaries
+#   copy: src=/usr/local/lattice-build/coordinator/bin/ dest=/usr/local/bin/
+#
+# - name: Binaries are executable
+#   shell: chmod +x /usr/local/bin/*
 
-- name: Binaries are executable
-  shell: chmod +x /usr/local/bin/*
+- name: Stop processes
+  shell: initctl stop {{ item }}
+  ignore_errors: true
+  with_items:
+  - consul-server
+  - doppler
+  - etcd
+  - file-server
+  - gnatsd
+  - gorouter
+  - receptor
+  - route-emitter
+  - trafficcontroller
+
+- name: Install and run processes
+  shell: /usr/local/lattice-build/coordinator/install-coordinator /usr/local/lattice-build/coordinator

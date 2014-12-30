@@ -8,6 +8,13 @@ NOTE: this is my first Ansible playbook.
 Current status
 --------------
 
+This playbook was authored/updated last for v35 of lattice
+
+```
+$ curl http://lattice.s3.amazonaws.com/Version
+35
+```
+
 There are 3 roles in this playbook:
 
 -	lattice-coordinator

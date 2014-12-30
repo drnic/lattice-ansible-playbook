@@ -16,8 +16,7 @@
   shell: rm -f /etc/init/consul-client.conf
   when: consul_server.stat.isfile is defined and consul_server.stat.isfile
 
-- name: Stop processes
-  shell: initctl stop {{ item }}
+- service: name={{ item }} state=stopped
   ignore_errors: true
   with_items:
   - auctioneer

@@ -11,8 +11,7 @@
 - name: Unpack lattice
   shell: rm -rf /usr/local/lattice-build && tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
 
-- name: Stop processes
-  shell: initctl stop {{ item }}
+- service: name={{ item }} state=stopped
   ignore_errors: true
   with_items:
   - consul-server

@@ -1,0 +1,7 @@
+---
+- apt: name=git
+
+- name: Install lattice-cli
+  shell: ". /etc/profile.d/go-bin.sh;
+          . /etc/profile.d/go-path.sh;
+          go get -u github.com/pivotal-cf-experimental/lattice-cli/ltc"

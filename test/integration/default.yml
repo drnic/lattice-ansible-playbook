@@ -8,3 +8,6 @@
   roles:
     - lattice-coordinator
     - lattice-diego-cell
+
+    - joshualund.golang
+    - lattice-cli

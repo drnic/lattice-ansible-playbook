@@ -5,8 +5,8 @@
 - hosts: test-kitchen
   user: root
   vars:
-    lattice_version: 35
-    
+    lattice_version: latest
+
   roles:
     - lattice-coordinator
     - lattice-diego-cell

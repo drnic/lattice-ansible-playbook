@@ -1,0 +1,3 @@
+---
+lattice_tarball: lattice-latest.tgz
+lattice_tarball_url: "https://s3-us-west-2.amazonaws.com/lattice/{{ lattice_tarball }}"

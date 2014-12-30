@@ -6,5 +6,5 @@
   user: root
 
   roles:
-    - joshualund.golang
-    - gnatsd
+    # - joshualund.golang
+    - lattice

@@ -1,0 +1,14 @@
+---
+# - name: Copy lattice release tarball if exists locally
+#   copy: src={{ lattice_tarball }} dest=/usr/local/
+#   ignore_errors: yes
+
+- name: Download lattice release tarball
+  get_url: url={{ lattice_tarball_url }} dest=/usr/local/{{ lattice_tarball }} force=no
+
+- stat: path=/usr/local/lattice-build
+  register: lattice_build
+
+- name: Unpack lattice
+  shell: tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
+  when: lattice_build.stat.isdir is not defined or not lattice_build.stat.isdir

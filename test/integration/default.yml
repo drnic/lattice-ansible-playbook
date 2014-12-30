@@ -7,4 +7,4 @@
 
   roles:
     - lattice-coordinator
-    # - lattice-diego-cell
+    - lattice-diego-cell

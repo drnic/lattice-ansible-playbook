@@ -13,4 +13,17 @@
   shell: tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
   when: lattice_build.stat.isdir is not defined or not lattice_build.stat.isdir
 
-- shell: /usr/local/lattice-build/diego-cell/install-coordinator /usr/local/lattice-build/diego-cell
+- name: Stop processes
+  shell: initctl stop {{ item }}
+  ignore_errors: true
+  with_items:
+  - auctioneer
+  - consul
+  - converger
+  - executor
+  - garden-linux
+  - metron
+  - rep
+
+- name: Install and run processes
+  shell: /usr/local/lattice-build/diego-cell/install-diego-cell /usr/local/lattice-build/diego-cell

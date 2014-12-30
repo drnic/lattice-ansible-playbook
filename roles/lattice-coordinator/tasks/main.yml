@@ -15,12 +15,6 @@
   shell: tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
   when: lattice_build.stat.isdir is not defined or not lattice_build.stat.isdir
 
-# - name: Install coordinator binaries
-#   copy: src=/usr/local/lattice-build/coordinator/bin/ dest=/usr/local/bin/
-#
-# - name: Binaries are executable
-#   shell: chmod +x /usr/local/bin/*
-
 - name: Stop processes
   shell: initctl stop {{ item }}
   ignore_errors: true

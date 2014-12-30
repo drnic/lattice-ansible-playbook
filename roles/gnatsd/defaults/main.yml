@@ -1,5 +1,0 @@
----
-gnatsd_git_url: "github.com/apcera/gnatsd"
-gnatsd_version: "0.5.7"
-gnatsd_git_tag: "v{{ gnatsd_version }}"
-gnatsd_version_target: "gnatsd version {{ gnatsd_version }}"

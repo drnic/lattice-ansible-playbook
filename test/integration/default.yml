@@ -6,6 +6,5 @@
   user: root
 
   roles:
-    # - joshualund.golang
     - lattice-coordinator
-    - lattice-diego-cell
+    # - lattice-diego-cell

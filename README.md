@@ -1,53 +1,44 @@
-lattice Ansible Role
-=========================================
+Lattice Ansible playbook
+========================
 
 Deploy Lattice using this Ansible playbook
 
-Requirements
-------------
+NOTE: this is my first Ansible playbook.
 
-Any pre-requisites that may not be covered by Ansible itself or the role
-should be mentioned here. For instance, if the role uses the EC2 module,
-it may be a good idea to mention in this section that the boto package
-is required.
-
-Role Variables
+Current status
 --------------
 
-A description of the settable variables for this role should go here,
-including any variables that are in defaults/main.yml, vars/main.yml,
-and any variables that can/should be set via parameters to the role. Any
-variables that are read from other roles and/or the global scope (ie.
-hostvars, group vars, etc.) should be mentioned here as well.
+There are 3 roles in this playbook:
 
-Dependencies
-------------
+-	lattice-coordinator
+-	lattice-diego-cell
+-	lattice-cli
 
-A list of other roles hosted on Galaxy should go here, plus any details
-in regards to parameters that may need to be set for other roles, or
-variables that are used from other roles.
+The latter is primarily useful for the tests (which haven't been written) or for a bastian/worker machine.
 
-Example Playbook
-----------------
+All three roles can be run on the same machine.
 
-Including an example of how to use your role (for instance, with
-variables passed in as parameters) is always nice for users too:
+I have not tested running the roles on different machines; my guess is it won't work due to static configuration files for consul. I'll work on that next.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+I have not tested this playbook outside of Test Kitchen.
+
+Tests
+-----
+
+Right now there are no "tests" but there is a Test Kitchen harness to bring up an Ubuntu box and install the 3 roles.
+
+```
+vagrant box add lattice/ubuntu-trusty-64
+bundle
+kitchen converge
+```
 
 License
 -------
 
-[MIT][license]
+[MIT](http://opensource.org/licenses/MIT)
 
 Author Information
 ------------------
 
-Author:: [lattice][drnic] <[drnicwilliams@gmail.com](drnicwilliams@gmail.com)>
-
-
-
-[drnic]: https://github.com/drnic
-[license]: http://opensource.org/licenses/MIT
+Author:: [lattice](https://github.com/drnic) \<[drnicwilliams@gmail.com](drnicwilliams@gmail.com)\>

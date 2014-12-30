@@ -13,6 +13,13 @@
   shell: tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
   when: lattice_build.stat.isdir is not defined or not lattice_build.stat.isdir
 
+- stat: path=/etc/init/consul-server.conf
+  register: consul_server
+
+- name: Don't run consul-client if consul-server on same machine
+  shell: rm -f /etc/init/consul-client.conf
+  when: consul_server.stat.isfile is defined and consul_server.stat.isfile
+
 - name: Stop processes
   shell: initctl stop {{ item }}
   ignore_errors: true

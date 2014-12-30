@@ -12,7 +12,7 @@ There are 3 roles in this playbook:
 
 -	lattice-coordinator
 -	lattice-diego-cell
--	lattice-cli
+-	lattice-cli (requires golang and git; [joshualund.golang](https://github.com/jlund/ansible-go) is the dependency role that is used in Test Kitchen preparation)
 
 The latter is primarily useful for the tests (which haven't been written) or for a bastian/worker machine.
 

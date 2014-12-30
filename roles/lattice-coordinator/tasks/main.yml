@@ -16,8 +16,5 @@
 - name: Install coordinator binaries
   copy: src=/usr/local/lattice-build/coordinator/bin/ dest=/usr/local/bin/
 
-- name: Coordinator binaries are executable
+- name: Binaries are executable
   shell: chmod +x /usr/local/bin/*
-
-- name: Consul version
-  command: consul --version

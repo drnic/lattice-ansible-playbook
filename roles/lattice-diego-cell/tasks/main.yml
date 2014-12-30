@@ -12,3 +12,9 @@
 - name: Unpack lattice
   shell: tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
   when: lattice_build.stat.isdir is not defined or not lattice_build.stat.isdir
+
+- name: Install diego-cell binaries
+  copy: src=/usr/local/lattice-build/diego-cell/bin/ dest=/usr/local/bin/
+
+- name: Binaries are executable
+  shell: chmod +x /usr/local/bin/*

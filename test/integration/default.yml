@@ -7,4 +7,5 @@
 
   roles:
     # - joshualund.golang
-    - lattice
+    - lattice-coordinator
+    - lattice-diego-cell

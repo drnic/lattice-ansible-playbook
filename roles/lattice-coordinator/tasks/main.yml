@@ -8,12 +8,8 @@
 - name: Download lattice release tarball
   get_url: url={{ lattice_tarball_url }} dest=/usr/local/{{ lattice_tarball }} force=no
 
-- stat: path=/usr/local/lattice-build
-  register: lattice_build
-
 - name: Unpack lattice
-  shell: tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
-  when: lattice_build.stat.isdir is not defined or not lattice_build.stat.isdir
+  shell: rm -rf /usr/local/lattice-build && tar xfz /usr/local/{{ lattice_tarball }} -C /usr/local/
 
 - name: Stop processes
   shell: initctl stop {{ item }}

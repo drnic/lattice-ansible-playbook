@@ -29,6 +29,25 @@ I have not tested running the roles on different machines; my guess is it won't 
 
 I have not tested this playbook outside of Test Kitchen.
 
+Configuration
+-------------
+
+By default, the `lattice-coordinator` and `lattice-diego-cell` modules will do a one-time install of the latest lattice. Repeatedly running the modules will not perform an upgrade.
+
+Alternately, explicitly specify a lattice version to install with a variable:
+
+```yaml
+vars:
+  lattice_version: 35
+```
+
+To determine the latest version number:
+
+```
+$ curl http://lattice.s3.amazonaws.com/Version
+35
+```
+
 Tests
 -----
 

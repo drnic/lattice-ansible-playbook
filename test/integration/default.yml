@@ -1,9 +1,10 @@
 ---
 
-# This playbook deploys the  role for testing.
+# This playbook deploys the role for testing.
 
 - hosts: test-kitchen
   user: root
 
   roles:
     - joshualund.golang
+    - gnatsd

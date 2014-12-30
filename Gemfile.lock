@@ -1,12 +1,8 @@
-PATH
-  remote: ~/Projects/rubygems/kitchen-ansible
-  specs:
-    kitchen-ansible (0.0.4)
-
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
+    kitchen-ansible (0.0.4)
     kitchen-vagrant (0.15.0)
       test-kitchen (~> 1.0)
     mixlib-shellout (1.6.1)
@@ -50,7 +46,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  kitchen-ansible!
+  kitchen-ansible
   kitchen-vagrant
   serverspec
   test-kitchen

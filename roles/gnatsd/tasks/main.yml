@@ -1,0 +1,16 @@
+---
+- name: Install git
+  apt: name=git
+
+- name: Register the current gnatsd version (if any)
+  shell: ". /etc/profile.d/go-bin.sh;
+          . /etc/profile.d/go-path.sh;
+          gnatsd -v"
+  ignore_errors: yes
+  register: gnatsd_version
+
+- name: Install gnatsd with go get
+  shell: ". /etc/profile.d/go-bin.sh;
+          . /etc/profile.d/go-path.sh;
+          go get {{ gnatsd_git_url }}"
+  when: gnatsd_version|failed or gnatsd_version.stdout != gnatsd_version_target

@@ -29,6 +29,15 @@ I have not tested running the roles on different machines; my guess is it won't 
 
 I have not tested this playbook outside of Test Kitchen.
 
+Issues/PRs created during development of this playbook:
+
+-	[![pivotal-cf-experimental/lattice/pull/4](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/pull/4.svg)](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/pull/4)
+-	[![pivotal-cf-experimental/lattice/issues/5](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/issues/5.svg)](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/issues/5)
+-	[![pivotal-cf-experimental/lattice/issues/6](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/issues/6.svg)](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/issues/6)
+-	[![pivotal-cf-experimental/lattice/pull/7](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/pull/7.svg)](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/pull/7)
+-	[![pivotal-cf-experimental/lattice/pull/8](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/pull/8.svg)](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/pull/8)
+-	[![pivotal-cf-experimental/lattice/pull/9](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/pull/9.svg)](https://github-shields.cfapps.io/github/pivotal-cf-experimental/lattice/pull/9)
+
 Configuration
 -------------
 
